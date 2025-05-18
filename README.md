@@ -2,16 +2,12 @@
 
 This project uses [YOLOv8](https://github.com/ultralytics/ultralytics) and ByteTrack to count the number of people crossing a defined line in a video. It's designed for monitoring entrances and exits in real time from a fixed camera.
 
-
----
-
 ## ✅ Features
 
 - Counts number of people entering and exiting a store based on a horizontal line.
 - Tracks each person using unique IDs.
 - Logs actions (`Entry` or `Exit`) and timestamps to a CSV file.
 - Displays annotated video with real-time count.
----
 
 ## 🛠️ Requirements
 
