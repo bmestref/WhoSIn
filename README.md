@@ -1,7 +1,5 @@
 # WhoSIn
 
-# YOLOv8 People Crossing Line Counter 🚶‍♂️🚶‍♀️
-
 This project uses [YOLOv8](https://github.com/ultralytics/ultralytics) and ByteTrack to count the number of people crossing a defined line in a video. It's designed for monitoring entrances and exits in real time from a fixed camera.
 
 
