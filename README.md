@@ -7,16 +7,10 @@ This project uses [YOLOv8](https://github.com/ultralytics/ultralytics) and ByteT
 
 ## ✅ Features
 
-- Counts number of people entering and exiting based on a horizontal line.
+- Counts number of people entering and exiting a store based on a horizontal line.
 - Tracks each person using unique IDs.
 - Logs actions (`Entry` or `Exit`) and timestamps to a CSV file.
 - Displays annotated video with real-time count.
-- Optimized for speed using:
-  - `YOLOv8n` model (lightweight)
-  - `classes=[0]` to detect only people
-  - Frame skipping (`FRAME_SKIP`)
-  - Optional threading or batch processing (advanced)
-
 ---
 
 ## 🛠️ Requirements
@@ -30,6 +24,7 @@ Install dependencies:
 
 ```bash
 pip install ultralytics opencv-python
+```
 
 Run the main script with your video:
 
