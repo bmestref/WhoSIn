@@ -27,15 +27,32 @@ pip install ultralytics opencv-python
 ```
 
 Run the main script with your video:
+```bash
+python whosin_counter.py <video.mp4> <directory_where_to_save_logs> <altitude_of_the_crossing_line>
+```
+## 📌 How It Works
+Detection: YOLOv8 is used to detect objects (restricted to person class via classes=[0]).
 
-bash
-Copiar
-Editar
-python whosin_counter.py
-You can customize the input video and detection line in the script:
+- Tracking: ByteTrack maintains track IDs of individuals.
 
-python
-Copiar
-Editar
-video_path = 'test_data/sample_video2.mp4'
-whosin_capture(video_path, 'log_file.csv', 250)  # 250 is the y-position of the detection line
+- Line Crossing Logic:
+
+Each person is tracked based on the vertical position of their head (20% from top of bounding box).
+When their tracked y-coordinate crosses a fixed horizontal line (crossing_line), it logs an entry or exit.
+
+## 📈 Output Example
+CSV Log:
+
+```bash
+Action,Datetime,People Inside
+Entry,2025-05-18 10:33:15,1
+Exit,2025-05-18 10:33:35,0
+```
+
+## ⚠️ Notes
+Currently supports horizontal line detection only.
+Works best on top-down or frontal camera angles.
+Accuracy may vary with occlusions or poor lighting.
+
+## 📷 Sample Video
+A demo video is included in test_data/sample_video2.mp4.
